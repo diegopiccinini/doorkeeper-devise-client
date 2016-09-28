@@ -1,10 +1,8 @@
 # Dookreeper Devise+Omniauth Client
 
-This app is an example of OAuth2 client. It was built in order to test
-the [doorkeeper provider example](http://doorkeeper-provider.herokuapp.com/).
-It uses [rails](http://github.com/rails/rails/), [devise](http://github.com/plataformatec/devise)
-and [omniauth](http://github.com/intridea/omniauth) gems. OAuth2
-strategy is build on top of [abstract OAuth2 strategy for OmniAuth](https://github.com/intridea/omniauth-oauth2)
+This app is an example of OAuth2 client. It is a copy of [doorkeeper-devise-client](https://github.com/doorkeeper-gem/doorkeeper-devise-client)
+to run easy with one OAuth2 doorkeeper provider in rails 4.2.5
+You can download the provider example [here](https://github.com/diegopiccinini/doorkeeper-provider)
 
 ## About Doorkeeper Gem
 
@@ -18,9 +16,9 @@ check out the project [on GitHub](https://github.com/applicake/doorkeeper).
 If you want to run the application by yourself here are the steps for
 you.
 
-First you need to clone the [repository from GitHub](http://github.com/applicake/doorkeeper-devise-client)
+First you need to clone the [repository from GitHub](https://github.com/diegopiccinini/doorkeeper-devise-client)
 
-    git clone git://github.com/applicake/doorkeeper-devise-client.git
+    git clone git@github.com:diegopiccinini/doorkeeper-devise-client.git
 
 Install all the gems
 
@@ -32,23 +30,18 @@ And migrate the databse
 
 At this point the application should be ready to run, but it won't
 communicate correctly with the provider. You need to set up environment
-variables to indicate the oauth2 provider values. In your environemnt
-file set up these variables
+variables to indicate the oauth2 provider values. I added dotenv gem to help to set up
+the environemnt variables in your .env file.There is a .env.example file
+to set these values
 
     DOORKEEPER_APP_ID = "375c2e3fd..." # ID for your app registered at the provider
     DOORKEEPER_APP_SECRET = "6a2fa82ab..." # Secret
-    DOORKEEPER_APP_URL = "http://the-provider.com" # URL to the provider
+    DOORKEEPER_APP_URL = "http://localhost:4000" # URL to the provider
 
-If you want to test it out you can use our sample provider using
-[doorkeeper](http://github.com/applicake/doorkeeper) gem. It's available
-[here](http://doorkeeper-provider.herokuapp.com). In order to add your
-application and get your appication ID and SECRET [click
-here](http://doorkeeper-provider.herokuapp.com/oauth/application/new).
+You have to create your .env to set the values in the development environment
 
 Now you are ready to start the app
 
     rails s
-
-
 
 
