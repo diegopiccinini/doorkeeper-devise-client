@@ -52,6 +52,7 @@ DoorkeeperDeviseClient::Application.routes.draw do
   match 'explore/:api' => 'api#explore', :as => :explore_api
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
     get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
+    get 'sign_in', :to => 'users/sessions#new', :as => :new_session
   end
   root :to => 'home#index'
 
